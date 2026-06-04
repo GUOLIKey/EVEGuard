@@ -1,0 +1,12 @@
+{
+  "name": "eve-bridge-service",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "@vercel/node": "^5.8.11"
+  }
+}
