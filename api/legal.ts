@@ -44,8 +44,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }),
     })
 
-    const payload = await completion.json()
-    const content = payload?.choices?.[0]?.message?.content ?? '{}'
+    const payload = (await completion.json()) as {
+      choices?: Array<{ message?: { content?: string } }>
+    }
+    const content = payload.choices?.[0]?.message?.content ?? '{}'
     const parsed = JSON.parse(content)
 
     return res.status(200).json({
